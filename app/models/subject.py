@@ -1,8 +1,8 @@
 from peewee import *
 
-from base_model import BaseModel
-from user import User
-from topic import Topic
+from .base_model import BaseModel
+from .user import User
+from .topic import Topic
 
 class Subject(BaseModel):
     name = CharField()

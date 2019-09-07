@@ -1,10 +1,10 @@
 from peewee import *
 
-from base_model import BaseModel
-from user import User
-from comment import Comment
-from subject import Subject
-from topic import Topic
+from .base_model import BaseModel
+from .user import User
+from .comment import Comment
+from .subject import Subject
+from .topic import Topic
 
 class Post(BaseModel):
     content = TextField()
