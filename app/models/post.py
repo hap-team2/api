@@ -5,16 +5,16 @@ from .user import User
 from .subject import Subject
 from .topic import Topic
 
+
 class Post(BaseModel):
     content = TextField()
     title = CharField()
-    id_ = IntegerField()
     question = BooleanField(default=False)
     verified = BooleanField(default=False)
-    image_url = CharField()
-    video_url = CharField()
-    file_url = CharField()
-    user = ForeignKeyField(User, backref='posts')
-    topic = ForeignKeyField(Topic, backref='posts', null=True)
-    subject = ForeignKeyField(Subject, backref='posts')
+    image_url = CharField(null=True)
+    video_url = CharField(null=True)
+    file_url = CharField(null=True)
+    user = IntegerField(default=1)
+    topic = IntegerField(default=1)
+    subject = IntegerField(default=1)
 

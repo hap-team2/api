@@ -46,7 +46,7 @@ def resource_factory(model: BaseModel) -> Resource:
             data = request.json if request.json else {}
 
             if "user" in model._meta.sorted_field_names and "user" not in data:
-                data["user"] = 2
+                data["user"] = 1
             resource = model(**data)
             resource.save()
             return resource.to_json()

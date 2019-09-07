@@ -7,6 +7,3 @@ from .user import User
 
 class Course(BaseModel):
     name = CharField()
-    subject = ForeignKeyField(Subject, backref="courses")
-    user = ForeignKeyField(User, backref="courses")
-

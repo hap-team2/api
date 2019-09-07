@@ -9,5 +9,4 @@ class Comment(BaseModel):
     title = CharField()
     response = BooleanField(default=False)
     verified = BooleanField(default=False)
-    user = ForeignKeyField(User, backref='comments')
-    post = ForeignKeyField(Post, backref='comments')
+    user = IntegerField(default=1)
