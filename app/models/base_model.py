@@ -1,3 +1,5 @@
+from peewee import *
+
 sqlite_db = SqliteDatabase("app.db", pragmas={"journal_mode": "wal"})
 
 
