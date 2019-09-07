@@ -1,6 +1,7 @@
 """
 restfull entities
 """
+from flask import request
 from flask_restful import Resource
 
 from models.base_model import BaseModel
@@ -40,6 +41,15 @@ def resource_factory(model: BaseModel) -> Resource:
             head lists the models fields
             """
             return model._meta.sorted_field_names
+
+        def post(self):
+            data = request.json if request.json else {}
+
+            if "user" in model._meta.sorted_field_names and "user" not in data:
+                data["user"] = 2
+            resource = model(**data)
+            resource.save()
+            return resource.to_json()
 
     return BaseResource
 
